@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema
+      Include="$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml" />
+    <AvailableItemName Include="ProtobufCompiler">
+      <Targets>_ProtobufCompiler</Targets>
+    </AvailableItemName>
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <ProtobufCompiler>
+      <Outputs>$(ProjectDir)\src\proto\%(Filename).pb.cc;$(ProjectDir)\src\proto\%(Filename).pb.h</Outputs>
+    </ProtobufCompiler>
+  </ItemDefinitionGroup>
+  <PropertyGroup>
+    <ComputeCompileInputsTargets>
+      $(ComputeCompileInputsTargets);
+      ComputeProtobufCompilerOutput;
+    </ComputeCompileInputsTargets>
+    <ComputeLinkInputsTargets>
+      $(ComputeLinkInputsTargets);
+      ComputeProtobufCompilerOutput;
+    </ComputeLinkInputsTargets>
+    <ComputeLibInputsTargets>
+      $(ComputeLibInputsTargets);
+      ComputeProtobufCompilerOutput;
+    </ComputeLibInputsTargets>
+  </PropertyGroup>
+  <UsingTask
+    TaskName="ProtobufCompiler"
+    TaskFactory="XamlTaskFactory"
+    AssemblyName="Microsoft.Build.Tasks.v4.0">
+    <Task>$(MSBuildThisFileDirectory)$(MSBuildThisFileName).xml</Task>
+  </UsingTask>
+  <Target
+    Name="_ProtobufCompiler"
+    BeforeTargets="$(ProtobufCompilerBeforeTargets)"
+    AfterTargets="$(ProtobufCompilerAfterTargets)"
+    Condition="'@(ProtobufCompiler)' != ''"
+    Outputs="@(ProtobufCompiler->'%(Outputs)')"
+    Inputs="@(ProtobufCompiler);%(ProtobufCompiler.AdditionalDependencies);$(MSBuildProjectFile)"
+    DependsOnTargets="$(ProtobufCompilerDependsOn);ComputeProtobufCompilerOutput">
+    <ItemGroup Condition="'@(SelectedFiles)' != ''">
+      <ProtobufCompiler Remove="@(ProtobufCompiler)" Condition="'%(Identity)' != '@(SelectedFiles)'" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProtobufCompiler_tlog
+        Include="%(ProtobufCompiler.Outputs)"
+        Condition="'%(ProtobufCompiler.Outputs)' != '' and '%(ProtobufCompiler.ExcludedFromBuild)' != 'true'">
+        <Source>@(ProtobufCompiler, '|')</Source>
+        <Inputs>@(ProtobufCompiler, ';')</Inputs>
+      </ProtobufCompiler_tlog>
+    </ItemGroup>
+    <Message
+      Importance="High"
+      Text="%(ProtobufCompiler.ExecutionDescription)" />
+    <WriteLinesToFile
+      Condition="'@(ProtobufCompiler_tlog)' != '' and '%(ProtobufCompiler_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)ProtobufCompiler.write.1.tlog"
+      Lines="^%(ProtobufCompiler_tlog.Source);%(ProtobufCompiler_tlog.Fullpath)" />
+    <WriteLinesToFile
+      Condition="'@(ProtobufCompiler_tlog)' != '' and '%(ProtobufCompiler_tlog.ExcludedFromBuild)' != 'true'"
+      File="$(TLogLocation)ProtobufCompiler.read.1.tlog"
+      Lines="^%(ProtobufCompiler_tlog.Inputs);$(MSBuildProjectFullPath);%(ProtobufCompiler_tlog.Fullpath)" />
+    <ProtobufCompiler
+      Condition="'@(ProtobufCompiler)' != '' and '%(ProtobufCompiler.ExcludedFromBuild)' != 'true'"
+      CommandLineTemplate="%(ProtobufCompiler.CommandLineTemplate)"
+      AdditionalOptions="%(ProtobufCompiler.AdditionalOptions)"
+      Inputs="@(ProtobufCompiler)"
+      StandardOutputImportance="High"
+      StandardErrorImportance="High" />
+  </Target>
+  <Target
+    Name="ComputeProtobufCompilerOutput"
+    Condition="'@(ProtobufCompiler)' != ''">
+    <ItemGroup>
+      <ProtobufCompilerOutputs
+        Condition="'@(ProtobufCompiler)' != '' and '%(ProtobufCompiler.ExcludedFromBuild)' != 'true'"
+        Include="%(ProtobufCompiler.Outputs)" />
+      <ClCompile
+        Include="%(ProtobufCompilerOutputs.Identity)"
+        Condition="'%(Extension)'=='.cc' or '%(Extension)'=='.cpp' or '%(Extension)'=='.cxx' or '%(Extension)'=='.c'" />
+    </ItemGroup>
+    <MakeDir Directories="@(ProtobufCompilerOutputs->'%(RootDir)%(Directory)')" />
+  </Target>
+</Project>

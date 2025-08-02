@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xsk">
+      <UniqueIdentifier>{8E1FC131-FAD4-3927-83C9-33FEEF7D302B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xsk\gsc">
+      <UniqueIdentifier>{BAC15D65-264D-CB29-2F5E-4E1E9B68272A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xsk\gsc\engine">
+      <UniqueIdentifier>{1F4B9A79-0B45-C3CB-F4B1-59DCE04A2938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gsc">
+      <UniqueIdentifier>{D90430A9-45E4-AE44-4EFC-391BBA5A15A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gsc\engine">
+      <UniqueIdentifier>{5EF5DBD3-4AC3-CFD9-3357-40001FC4AB3E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\deps\gsc-tool\include\xsk\gsc\engine\h1.hpp">
+      <Filter>include\xsk\gsc\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\deps\gsc-tool\include\xsk\stdinc.hpp">
+      <Filter>include\xsk</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\deps\gsc-tool\src\gsc\engine\h1.cpp">
+      <Filter>src\gsc\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\deps\gsc-tool\src\gsc\engine\h1_code.cpp">
+      <Filter>src\gsc\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\deps\gsc-tool\src\gsc\engine\h1_func.cpp">
+      <Filter>src\gsc\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\deps\gsc-tool\src\gsc\engine\h1_meth.cpp">
+      <Filter>src\gsc\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\deps\gsc-tool\src\gsc\engine\h1_token.cpp">
+      <Filter>src\gsc\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

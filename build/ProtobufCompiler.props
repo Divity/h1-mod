@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup
+    Condition="'$(ProtobufCompilerBeforeTargets)' == '' and '$(ProtobufCompilerAfterTargets)' == '' and '$(ConfigurationType)' != 'Makefile'">
+    <ProtobufCompilerBeforeTargets>Midl</ProtobufCompilerBeforeTargets>
+    <ProtobufCompilerAfterTargets>CustomBuild</ProtobufCompilerAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProtobufCompilerDependsOn
+      Condition="'$(ConfigurationType)' != 'Makefile'">_SelectedFiles;$(ProtobufCompilerDependsOn)</ProtobufCompilerDependsOn>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ProtobufCompiler>
+      <CommandLineTemplate>@echo off
+path "$(SolutionDir)\..\tools"
+if not exist "$(ProjectDir)\src\proto" mkdir "$(ProjectDir)\src\proto"
+protoc --error_format=msvs -I=%(RelativeDir) --cpp_out=src\proto %(Identity)</CommandLineTemplate>
+      <ExecutionDescription>Compiling %(Identity) with protoc...</ExecutionDescription>
+      <AdditionalDependencies></AdditionalDependencies>
+    </ProtobufCompiler>
+  </ItemDefinitionGroup>
+</Project>

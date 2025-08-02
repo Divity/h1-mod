@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8461ABF6-7003-D6CC-59BE-E92045FF5C1D}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\x64\Debug\</OutDir>
+    <IntDir>obj\x64\Debug\client\</IntDir>
+    <TargetName>h1-mod_dev</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\x64\Release\</OutDir>
+    <IntDir>obj\x64\Release\client\</IntDir>
+    <TargetName>h1-mod</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>std_include.hpp</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;DEBUG;_DEBUG;ASMJIT_STATIC;CURL_STRICTER;CURL_STATICLIB;CURL_DISABLE_LDAP;LTC_NO_FAST;LTC_NO_PROTOTYPES;LTC_NO_RSA_BLINDING;LTM_DESC;__STDC_IEC_559__;MP_NO_DEV_URANDOM;ZLIB_CONST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src\client;..\src\common;src;..\deps\asmjit\src;..\deps\curl\include;..\deps\DirectXTex\DirectXTex;..\deps\DirectXTex\Common;..\deps\discord-rpc\include;..\deps\gsc-tool\include;..\deps\GSL\include;..\deps\imgui;..\deps\libtomcrypt\src\headers;..\deps\libtommath;..\deps\minhook\include;..\deps\zlib\contrib\minizip;..\deps\protobuf\src;..\deps\rapidjson\include;..\deps\sol2\include;..\deps\lua;..\deps\stb;..\deps\udis86;..\deps\udis86\libudis86;..\deps\extra\udis86;..\deps\extra\udis86\libudis86;..\deps\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;DEBUG;_DEBUG;ASMJIT_STATIC;CURL_STRICTER;CURL_STATICLIB;CURL_DISABLE_LDAP;LTC_NO_FAST;LTC_NO_PROTOTYPES;LTC_NO_RSA_BLINDING;LTM_DESC;__STDC_IEC_559__;MP_NO_DEV_URANDOM;ZLIB_CONST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src\client;..\src\common;src;..\deps\asmjit\src;..\deps\curl\include;..\deps\DirectXTex\DirectXTex;..\deps\DirectXTex\Common;..\deps\discord-rpc\include;..\deps\gsc-tool\include;..\deps\GSL\include;..\deps\imgui;..\deps\libtomcrypt\src\headers;..\deps\libtommath;..\deps\minhook\include;..\deps\zlib\contrib\minizip;..\deps\protobuf\src;..\deps\rapidjson\include;..\deps\sol2\include;..\deps\lua;..\deps\stb;..\deps\udis86;..\deps\udis86\libudis86;..\deps\extra\udis86;..\deps\extra\udis86\libudis86;..\deps\zlib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/IGNORE:4254 /DYNAMICBASE:NO /SAFESEH:NO /LARGEADDRESSAWARE /PDBCompress %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>pushd ..
+tools\premake5 generate-buildinfo
+popd</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>std_include.hpp</PrecompiledHeaderFile>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;NDEBUG;ASMJIT_STATIC;CURL_STRICTER;CURL_STATICLIB;CURL_DISABLE_LDAP;LTC_NO_FAST;LTC_NO_PROTOTYPES;LTC_NO_RSA_BLINDING;LTM_DESC;__STDC_IEC_559__;MP_NO_DEV_URANDOM;ZLIB_CONST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src\client;..\src\common;src;..\deps\asmjit\src;..\deps\curl\include;..\deps\DirectXTex\DirectXTex;..\deps\DirectXTex\Common;..\deps\discord-rpc\include;..\deps\gsc-tool\include;..\deps\GSL\include;..\deps\imgui;..\deps\libtomcrypt\src\headers;..\deps\libtommath;..\deps\minhook\include;..\deps\zlib\contrib\minizip;..\deps\protobuf\src;..\deps\rapidjson\include;..\deps\sol2\include;..\deps\lua;..\deps\stb;..\deps\udis86;..\deps\udis86\libudis86;..\deps\extra\udis86;..\deps\extra\udis86\libudis86;..\deps\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/GL %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;NDEBUG;ASMJIT_STATIC;CURL_STRICTER;CURL_STATICLIB;CURL_DISABLE_LDAP;LTC_NO_FAST;LTC_NO_PROTOTYPES;LTC_NO_RSA_BLINDING;LTM_DESC;__STDC_IEC_559__;MP_NO_DEV_URANDOM;ZLIB_CONST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\src\client;..\src\common;src;..\deps\asmjit\src;..\deps\curl\include;..\deps\DirectXTex\DirectXTex;..\deps\DirectXTex\Common;..\deps\discord-rpc\include;..\deps\gsc-tool\include;..\deps\GSL\include;..\deps\imgui;..\deps\libtomcrypt\src\headers;..\deps\libtommath;..\deps\minhook\include;..\deps\zlib\contrib\minizip;..\deps\protobuf\src;..\deps\rapidjson\include;..\deps\sol2\include;..\deps\lua;..\deps\stb;..\deps\udis86;..\deps\udis86\libudis86;..\deps\extra\udis86;..\deps\extra\udis86\libudis86;..\deps\zlib;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/IGNORE:4702 /LTCG /IGNORE:4254 /DYNAMICBASE:NO /SAFESEH:NO /LARGEADDRESSAWARE /PDBCompress %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+      <Command>pushd ..
+tools\premake5 generate-buildinfo
+popd</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\client\component\arxan.hpp" />
+    <ClInclude Include="..\src\client\component\arxan\breakpoints.hpp" />
+    <ClInclude Include="..\src\client\component\arxan\integrity.hpp" />
+    <ClInclude Include="..\src\client\component\auth.hpp" />
+    <ClInclude Include="..\src\client\component\command.hpp" />
+    <ClInclude Include="..\src\client\component\console.hpp" />
+    <ClInclude Include="..\src\client\component\discord.hpp" />
+    <ClInclude Include="..\src\client\component\download.hpp" />
+    <ClInclude Include="..\src\client\component\dvars.hpp" />
+    <ClInclude Include="..\src\client\component\fastfiles.hpp" />
+    <ClInclude Include="..\src\client\component\filesystem.hpp" />
+    <ClInclude Include="..\src\client\component\fonts.hpp" />
+    <ClInclude Include="..\src\client\component\fps.hpp" />
+    <ClInclude Include="..\src\client\component\game_console.hpp" />
+    <ClInclude Include="..\src\client\component\game_module.hpp" />
+    <ClInclude Include="..\src\client\component\gsc\script_error.hpp" />
+    <ClInclude Include="..\src\client\component\gsc\script_extension.hpp" />
+    <ClInclude Include="..\src\client\component\gsc\script_loading.hpp" />
+    <ClInclude Include="..\src\client\component\gui\asset_list.hpp" />
+    <ClInclude Include="..\src\client\component\gui\debug.hpp" />
+    <ClInclude Include="..\src\client\component\gui\gui.hpp" />
+    <ClInclude Include="..\src\client\component\imagefiles.hpp" />
+    <ClInclude Include="..\src\client\component\images.hpp" />
+    <ClInclude Include="..\src\client\component\localized_strings.hpp" />
+    <ClInclude Include="..\src\client\component\logfile.hpp" />
+    <ClInclude Include="..\src\client\component\map_rotation.hpp" />
+    <ClInclude Include="..\src\client\component\materials.hpp" />
+    <ClInclude Include="..\src\client\component\memory.hpp" />
+    <ClInclude Include="..\src\client\component\menus.hpp" />
+    <ClInclude Include="..\src\client\component\mods.hpp" />
+    <ClInclude Include="..\src\client\component\motd.hpp" />
+    <ClInclude Include="..\src\client\component\network.hpp" />
+    <ClInclude Include="..\src\client\component\party.hpp" />
+    <ClInclude Include="..\src\client\component\rcon.hpp" />
+    <ClInclude Include="..\src\client\component\scheduler.hpp" />
+    <ClInclude Include="..\src\client\component\scripting.hpp" />
+    <ClInclude Include="..\src\client\component\server_list.hpp" />
+    <ClInclude Include="..\src\client\component\steam_proxy.hpp" />
+    <ClInclude Include="..\src\client\component\system_check.hpp" />
+    <ClInclude Include="..\src\client\component\ui_scripting.hpp" />
+    <ClInclude Include="..\src\client\component\updater.hpp" />
+    <ClInclude Include="..\src\client\component\weapon.hpp" />
+    <ClInclude Include="..\src\client\game\database.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\bit_buffer.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\byte_buffer.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\data_types.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\keys.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\reply.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\server_registry.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\auth3_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\base_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\lobby_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\service_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\stun_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\tcp_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\udp_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\servers\umbrella_server.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\service.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdAnticheat.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdBandwidthTest.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdContentStreaming.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdCounter.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdDML.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdEventLog.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdFacebook.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdGroup.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdLeague.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdLeague2.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdMarketingComms.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdMarketplace.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdMatchMaking.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdPresence.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdProfiles.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdPublisherVariables.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdReward.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdRichPresence.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdStats.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdStats2.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdStats3.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdStorage.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdTeams.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdTitleUtilities.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdUNK63.hpp" />
+    <ClInclude Include="..\src\client\game\demonware\services\bdUserGroups.hpp" />
+    <ClInclude Include="..\src\client\game\dvars.hpp" />
+    <ClInclude Include="..\src\client\game\game.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\array.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\entity.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\event.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\execution.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\function.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\functions.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\context.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\engine.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\error.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\event_handler.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\scheduler.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\lua\value_conversion.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\safe_execution.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\script_value.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\stack_isolation.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\variable_value.hpp" />
+    <ClInclude Include="..\src\client\game\scripting\vector.hpp" />
+    <ClInclude Include="..\src\client\game\structs.hpp" />
+    <ClInclude Include="..\src\client\game\symbols.hpp" />
+    <ClInclude Include="..\src\client\game\ui_scripting\execution.hpp" />
+    <ClInclude Include="..\src\client\game\ui_scripting\script_value.hpp" />
+    <ClInclude Include="..\src\client\game\ui_scripting\types.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\doc_host_ui_handler.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\html_argument.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\html_dispatch.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\html_frame.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\html_window.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\ole_client_site.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\ole_in_place_frame.hpp" />
+    <ClInclude Include="..\src\client\launcher\html\ole_in_place_site.hpp" />
+    <ClInclude Include="..\src\client\launcher\launcher.hpp" />
+    <ClInclude Include="..\src\client\launcher\window.hpp" />
+    <ClInclude Include="..\src\client\loader\component_interface.hpp" />
+    <ClInclude Include="..\src\client\loader\component_loader.hpp" />
+    <ClInclude Include="..\src\client\loader\loader.hpp" />
+    <ClInclude Include="..\src\client\loader\seh.hpp" />
+    <ClInclude Include="..\src\client\loader\tls.hpp" />
+    <ClInclude Include="..\src\client\resource.hpp" />
+    <ClInclude Include="..\src\client\std_include.hpp" />
+    <ClInclude Include="..\src\client\steam\interface.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\apps.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\friends.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\game_server.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\matchmaking.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\networking.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\remote_storage.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\user.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\user_stats.hpp" />
+    <ClInclude Include="..\src\client\steam\interfaces\utils.hpp" />
+    <ClInclude Include="..\src\client\steam\steam.hpp" />
+    <ClInclude Include="..\src\client\utils\hash.hpp" />
+    <ClInclude Include="..\src\client\utils\mapents.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\client\component\arena.cpp" />
+    <ClCompile Include="..\src\client\component\arxan\arxan.cpp" />
+    <ClCompile Include="..\src\client\component\auth.cpp" />
+    <ClCompile Include="..\src\client\component\binding.cpp" />
+    <ClCompile Include="..\src\client\component\bots.cpp" />
+    <ClCompile Include="..\src\client\component\branding.cpp" />
+    <ClCompile Include="..\src\client\component\bullet.cpp" />
+    <ClCompile Include="..\src\client\component\chat.cpp" />
+    <ClCompile Include="..\src\client\component\colors.cpp" />
+    <ClCompile Include="..\src\client\component\command.cpp" />
+    <ClCompile Include="..\src\client\component\console.cpp" />
+    <ClCompile Include="..\src\client\component\dedicated.cpp" />
+    <ClCompile Include="..\src\client\component\dedicated_info.cpp" />
+    <ClCompile Include="..\src\client\component\demonware.cpp" />
+    <ClCompile Include="..\src\client\component\discord.cpp" />
+    <ClCompile Include="..\src\client\component\download.cpp" />
+    <ClCompile Include="..\src\client\component\dvar_cheats.cpp" />
+    <ClCompile Include="..\src\client\component\dvars.cpp" />
+    <ClCompile Include="..\src\client\component\exception.cpp" />
+    <ClCompile Include="..\src\client\component\experimental.cpp" />
+    <ClCompile Include="..\src\client\component\fastfiles.cpp" />
+    <ClCompile Include="..\src\client\component\filesystem.cpp" />
+    <ClCompile Include="..\src\client\component\fonts.cpp" />
+    <ClCompile Include="..\src\client\component\fps.cpp" />
+    <ClCompile Include="..\src\client\component\game_console.cpp" />
+    <ClCompile Include="..\src\client\component\game_module.cpp" />
+    <ClCompile Include="..\src\client\component\gameplay.cpp" />
+    <ClCompile Include="..\src\client\component\gsc\script_error.cpp" />
+    <ClCompile Include="..\src\client\component\gsc\script_extension.cpp" />
+    <ClCompile Include="..\src\client\component\gsc\script_loading.cpp" />
+    <ClCompile Include="..\src\client\component\gui\asset_list.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\comworld.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\gfxworld.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\mapents.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\material.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\sound.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\stringtable.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\weapon.cpp" />
+    <ClCompile Include="..\src\client\component\gui\assets\xmodel.cpp" />
+    <ClCompile Include="..\src\client\component\gui\debug.cpp" />
+    <ClCompile Include="..\src\client\component\gui\entity_list.cpp" />
+    <ClCompile Include="..\src\client\component\gui\fog_editor.cpp" />
+    <ClCompile Include="..\src\client\component\gui\gui.cpp" />
+    <ClCompile Include="..\src\client\component\gui\vision_editor.cpp" />
+    <ClCompile Include="..\src\client\component\imagefiles.cpp" />
+    <ClCompile Include="..\src\client\component\images.cpp" />
+    <ClCompile Include="..\src\client\component\input.cpp" />
+    <ClCompile Include="..\src\client\component\io.cpp" />
+    <ClCompile Include="..\src\client\component\json.cpp" />
+    <ClCompile Include="..\src\client\component\localized_strings.cpp" />
+    <ClCompile Include="..\src\client\component\logfile.cpp" />
+    <ClCompile Include="..\src\client\component\logger.cpp" />
+    <ClCompile Include="..\src\client\component\lui.cpp" />
+    <ClCompile Include="..\src\client\component\map_patches.cpp" />
+    <ClCompile Include="..\src\client\component\map_rotation.cpp" />
+    <ClCompile Include="..\src\client\component\mapents.cpp">
+      <ObjectFileName>$(IntDir)\mapents1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\component\materials.cpp" />
+    <ClCompile Include="..\src\client\component\memory.cpp" />
+    <ClCompile Include="..\src\client\component\menus.cpp" />
+    <ClCompile Include="..\src\client\component\mods.cpp" />
+    <ClCompile Include="..\src\client\component\motd.cpp" />
+    <ClCompile Include="..\src\client\component\movement.cpp" />
+    <ClCompile Include="..\src\client\component\network.cpp" />
+    <ClCompile Include="..\src\client\component\party.cpp" />
+    <ClCompile Include="..\src\client\component\patches.cpp" />
+    <ClCompile Include="..\src\client\component\ranked.cpp" />
+    <ClCompile Include="..\src\client\component\rcon.cpp" />
+    <ClCompile Include="..\src\client\component\redirect.cpp" />
+    <ClCompile Include="..\src\client\component\reflection_probes.cpp" />
+    <ClCompile Include="..\src\client\component\renderer.cpp" />
+    <ClCompile Include="..\src\client\component\resources.cpp" />
+    <ClCompile Include="..\src\client\component\scheduler.cpp" />
+    <ClCompile Include="..\src\client\component\scripting.cpp" />
+    <ClCompile Include="..\src\client\component\security.cpp" />
+    <ClCompile Include="..\src\client\component\server_list.cpp" />
+    <ClCompile Include="..\src\client\component\slowmotion.cpp" />
+    <ClCompile Include="..\src\client\component\splash.cpp" />
+    <ClCompile Include="..\src\client\component\stats.cpp" />
+    <ClCompile Include="..\src\client\component\steam_proxy.cpp" />
+    <ClCompile Include="..\src\client\component\system_check.cpp" />
+    <ClCompile Include="..\src\client\component\thirdperson.cpp" />
+    <ClCompile Include="..\src\client\component\thread_names.cpp" />
+    <ClCompile Include="..\src\client\component\ui_scripting.cpp" />
+    <ClCompile Include="..\src\client\component\updater.cpp" />
+    <ClCompile Include="..\src\client\component\videos.cpp" />
+    <ClCompile Include="..\src\client\component\virtuallobby.cpp" />
+    <ClCompile Include="..\src\client\component\weapon.cpp">
+      <ObjectFileName>$(IntDir)\weapon1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\component\wmi.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\bit_buffer.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\byte_buffer.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\keys.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\reply.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\auth3_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\base_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\lobby_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\stun_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\tcp_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\udp_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\servers\umbrella_server.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdAnticheat.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdBandwidthTest.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdContentStreaming.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdCounter.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdDML.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdEventLog.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdFacebook.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdGroup.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdLeague.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdLeague2.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdMarketingComms.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdMarketplace.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdMatchMaking.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdPresence.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdProfiles.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdPublisherVariables.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdReward.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdRichPresence.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdStats.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdStats2.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdStats3.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdStorage.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdTeams.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdTitleUtilities.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdUNK63.cpp" />
+    <ClCompile Include="..\src\client\game\demonware\services\bdUserGroups.cpp" />
+    <ClCompile Include="..\src\client\game\dvars.cpp">
+      <ObjectFileName>$(IntDir)\dvars1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\game\game.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\array.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\entity.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\execution.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\function.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\functions.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\lua\context.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\lua\engine.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\lua\error.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\lua\event_handler.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\lua\scheduler.cpp">
+      <ObjectFileName>$(IntDir)\scheduler1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\game\scripting\lua\value_conversion.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\safe_execution.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\script_value.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\stack_isolation.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\variable_value.cpp" />
+    <ClCompile Include="..\src\client\game\scripting\vector.cpp" />
+    <ClCompile Include="..\src\client\game\ui_scripting\execution.cpp">
+      <ObjectFileName>$(IntDir)\execution1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\game\ui_scripting\script_value.cpp">
+      <ObjectFileName>$(IntDir)\script_value1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\src\client\game\ui_scripting\types.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\doc_host_ui_handler.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\html_argument.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\html_dispatch.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\html_frame.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\html_window.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\ole_client_site.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\ole_in_place_frame.cpp" />
+    <ClCompile Include="..\src\client\launcher\html\ole_in_place_site.cpp" />
+    <ClCompile Include="..\src\client\launcher\launcher.cpp" />
+    <ClCompile Include="..\src\client\launcher\window.cpp" />
+    <ClCompile Include="..\src\client\loader\component_loader.cpp" />
+    <ClCompile Include="..\src\client\loader\loader.cpp" />
+    <ClCompile Include="..\src\client\loader\seh.cpp" />
+    <ClCompile Include="..\src\client\loader\tls.cpp" />
+    <ClCompile Include="..\src\client\main.cpp" />
+    <ClCompile Include="..\src\client\std_include.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\client\steam\interface.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\apps.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\friends.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\game_server.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\matchmaking.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\networking.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\remote_storage.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\user.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\user_stats.cpp" />
+    <ClCompile Include="..\src\client\steam\interfaces\utils.cpp" />
+    <ClCompile Include="..\src\client\steam\steam.cpp" />
+    <ClCompile Include="..\src\client\utils\hash.cpp" />
+    <ClCompile Include="..\src\client\utils\mapents.cpp">
+      <ObjectFileName>$(IntDir)\mapents2.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\client\resources\dvar_list.json" />
+    <None Include="..\src\client\resources\dw\ffotd-1.15.1.ff" />
+    <None Include="..\src\client\resources\dw\motd-english.txt" />
+    <None Include="..\src\client\resources\dw\playlists_tu12.aggr" />
+    <None Include="..\src\client\resources\icon.ico" />
+    <None Include="..\src\client\resources\json.lua" />
+    <None Include="..\src\client\resources\main.html" />
+    <None Include="..\src\client\resources\ui_scripts\common.lua" />
+    <None Include="..\src\client\resources\ui_scripts\updater.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\client\resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\src\client\resources\icon.png" />
+    <Image Include="..\src\client\resources\logo.bmp" />
+    <Image Include="..\src\client\resources\splash.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="common.vcxproj">
+      <Project>{AEFEE3F6-9AA0-0ECD-835B-22216F9C951D}</Project>
+    </ProjectReference>
+    <ProjectReference Include="asmjit.vcxproj">
+      <Project>{ED0182F2-D9A3-ACC8-C25E-C01CAE9F3319}</Project>
+    </ProjectReference>
+    <ProjectReference Include="curl.vcxproj">
+      <Project>{DB59957C-C790-960D-707D-7C105C93120F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="DirectXTex.vcxproj">
+      <Project>{A90EE592-95C6-26E0-FECD-FF3BEAA4C1D0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="discord-rpc.vcxproj">
+      <Project>{DFD4EACE-4B8A-63C4-D47E-5D9B40335AC8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="xsk-gsc-h1.vcxproj">
+      <Project>{6BC3A4AE-577B-E6FB-C082-BF57AC5981EC}</Project>
+    </ProjectReference>
+    <ProjectReference Include="xsk-gsc-utils.vcxproj">
+      <Project>{83585E48-EF18-DA7E-B853-23FC24D31E5B}</Project>
+    </ProjectReference>
+    <ProjectReference Include="imgui.vcxproj">
+      <Project>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libtomcrypt.vcxproj">
+      <Project>{1E3156E2-8AE6-CED7-13DB-C8AE7F8FC5DB}</Project>
+    </ProjectReference>
+    <ProjectReference Include="libtommath.vcxproj">
+      <Project>{36F6A20E-22AE-E45B-8BB5-BDB7778C7F4C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="minhook.vcxproj">
+      <Project>{5A9B3AC7-C67A-B962-CF92-44393BF11FC4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="minizip.vcxproj">
+      <Project>{C5553BC7-3135-BA62-3A4D-4539A6AB20C4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="protobuf.vcxproj">
+      <Project>{16C14D2B-028E-A836-2BA7-96DE17D3DDC4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="lua.vcxproj">
+      <Project>{C78D880B-3397-887C-BC12-9F7C281B947C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="udis86.vcxproj">
+      <Project>{28AD1720-144F-42F6-FD09-564AE94AC946}</Project>
+    </ProjectReference>
+    <ProjectReference Include="zlib.vcxproj">
+      <Project>{16CFA17C-0206-A30D-ABF2-881097081F0F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
